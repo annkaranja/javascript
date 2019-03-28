@@ -1,0 +1,5 @@
+Difference between null and undefined
+
+undefined means a variable has been declared but has not yet been assigned 
+a value. On the other hand, null is an assignment value. It can be assigned 
+variable as a representation of no value.

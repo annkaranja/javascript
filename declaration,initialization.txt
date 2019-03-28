@@ -1,0 +1,22 @@
+1.Declaration
+It registers a variable in the corresponding scope.
+In declaration a variable is registered using a given 
+name within the corresponding scope.
+When one declare a variable it is automatic.
+It is not an executable statement.
+
+
+2.Initialization 
+Allocates memory for the variable.
+when you declare a variable it is automatically initialized,
+which means memory is allocated for the variable 
+by the JavaScript engine.
+
+
+
+
+
+JavaScript functions are defined with the function keyword.
+(a function is a javaScript procedure.Its a set of statements that
+performs a task or calculates a value.)
+You can also use a function declaration or a function expression.
