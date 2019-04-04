@@ -1,0 +1,74 @@
+
+var grades = {"80 and above":"A",
+         
+              "70 - 79":"B",
+          
+              "60-69":"C",
+         
+              "50-59":"D",
+          
+              "40-40":"E",
+        
+              "anything else":"F"
+           
+     
+        } 
+
+
+function getGrade () {
+
+
+var grades = {"80 and above":"A",
+          
+              "70 - 79":"B",
+         
+              "60-69":"C",
+          
+              "50-59":"D",
+          
+              "40-40":"E",
+        
+              "anything else":"F"
+           
+              } 
+
+
+if (grades >=80);
+
+return ("A")
+
+
+if (grades >=70);
+return ("B")
+
+
+if (grades >=60);
+
+return("C")
+
+
+if (grades  >=50);
+
+return("D")
+
+
+if (grades >=40);
+
+return("E")
+
+
+if (grades  >=0);
+
+return("F")
+
+}
+
+
+
+getGrade()
+"A"
+
+
+
+
+
