@@ -42,7 +42,7 @@ var kiosk = {
 
 
 
-kiosk.Fruits = 'apple grapes';
+kiosk.Fruits = 'apple grapes rasperry';
 
 
 console.log(kiosk.firstFruit);        // apple
