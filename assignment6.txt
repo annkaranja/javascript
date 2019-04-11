@@ -1,0 +1,60 @@
+var kiosk = {
+ 
+    firstFruit : "apple",
+ 
+
+    secondFruit : "grapes",
+ 
+
+    thirdFruit : "rasperry",
+ 
+
+
+    getFruits() {
+ 
+ 
+    return this.firstFruit    +  ' '  +   this.secondFruit; + ' ' +
+           this.thirdFruit      
+   
+
+},
+
+
+
+
+   setFruits (fruits) {
+       
+       var words = fruits.toString().split(' ');
+       
+       this.firstFruit = words[0] || '';
+        
+       this.secondFruits = words[1] || '';
+  
+       this.thirdFruits = words[2] || '';
+  
+ 
+   }
+
+
+
+
+}
+
+
+
+kiosk.Fruits = 'apple grapes';
+
+
+console.log(kiosk.firstFruit);        // apple
+
+console.log(kiosk.secondFruit);       // grapes
+
+
+console.log(kiosk.thirdFruit);       // rasperry
+
+
+ apples
+ grapes
+ rasperry
+ 
+
