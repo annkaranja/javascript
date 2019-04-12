@@ -1,74 +1,90 @@
+function getGrade(marks) {
+  
+   var grade;
+  
+   var score = parseInt(marks / 10);
+  
+ 
 
-var grades = {"80 and above":"A",
-         
-              "70 - 79":"B",
-          
-              "60-69":"C",
-         
-              "50-59":"D",
-          
-              "40-40":"E",
-        
-              "anything else":"F"
-           
+   switch(score){
+
+
+      
+    case 10:
      
-        } 
-
-
-function getGrade () {
-
-
-var grades = {"80 and above":"A",
-          
-              "70 - 79":"B",
-         
-              "60-69":"C",
-          
-              "50-59":"D",
-          
-              "40-40":"E",
-        
-              "anything else":"F"
+    case 9:
+      
+    case 8:
            
-              } 
+         grade = "A";
+           
+         break;
+
+      
+
+    case 7:
+           
+         grade = "B";
+          
+         break;
+
+      
+
+    case 6:
+          
+         grade = "C";
+           
+         break;
+  
+      
+
+    case 5:
+           
+         grade = "D";
+           
+         break;
 
 
-if (grades >=80);
-
-return ("A")
-
-
-if (grades >=70);
-return ("B")
-
-
-if (grades >=60);
-
-return("C")
-
-
-if (grades  >=50);
-
-return("D")
-
-
-if (grades >=40);
-
-return("E")
+      
+  
+    case 4:
+        
+    case 3:
+      
+    case 2:
+      
+    case 1:
+      
+    case 0:
+           
+         grade = "E";
+          
+         break;
+      
+     default:
+           
+         grade = F;
 
 
-if (grades  >=0);
 
-return("F")
+}
+
+  
+ 
+ return grade; 
+
+
 
 }
 
 
+console.log(getGrade(100))
 
-getGrade()
-"A"
-
-
+A
 
 
 
+console.log(getGrade(79))
+
+
+B
