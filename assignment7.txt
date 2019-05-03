@@ -1,9 +1,9 @@
 Write a class KioskCalc that has the following fruitsPriceList object.
 this.fruitsPriceList = { "orange": 30, "mango": 15, "avocado": 40 }; 
 and takes two parameters (fruit, quantity) when initialized i.e. 
-var kioskCalc = new KioskCalc(ìorangeî, 2);
+var kioskCalc = new KioskCalc(‚Äúorange‚Äù, 2);
 Thereafter, it allows one to calculate the total cost of the fruit by accessing the getTotalCost( ) method. 
-kioskCalc.getTotalCost( )  // returns ì2 orange for KES 60î 
+kioskCalc.getTotalCost( )  // returns ‚Äú2 orange for KES 60‚Äù 
 
 
 class KioskCalc{
@@ -26,6 +26,6 @@ console.log(share_kioskCalc.quantity + " " + share_kioskCalc.fruit_name + " for 
 var share_kioskCalc= new KioskCalc("mango",2);
 console.log(share_kioskCalc.quantity + " " + share_kioskCalc.fruit_name + " for KES " + share_kioskCalc.getTotalCost()); 
     
-2 oranges for KES 2 
+2 oranges for KES 60
 2 ovacado for KES 80
 2 mango for KES 30
