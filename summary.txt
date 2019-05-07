@@ -45,7 +45,7 @@ console.log(myArray[1]);      // prints out 2
  myArray[3] = "hello"
  console.log(myArray);   //will print [undefined, undefined, undefined, "hello"]
 
-TOPIC 5
+TOPIC 4
 Manupulating Arrays
 a)Popping and Pushing
  Push inserts variables.
