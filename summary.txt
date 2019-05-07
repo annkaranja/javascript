@@ -1,0 +1,392 @@
+Topic 1
+Hello!world
+console.log("Goodbye, World!");  //prints Goodbye,World!
+
+Topic 2
+Variables and Types
+-Variables are parameters/containers.
+-In Javascript every variable is defined using the var keyword, 
+and can contain all types of variables.
+-Number type can be both a floating point number and an integer.
+-Boolean variables can only be equal to either true or false.
+-When a variable is used without first defining a value for it, it is equal to undefined
+
+example 1;
+var myNumber = 4;
+console.log(myNumber);  //prints 4
+
+example 2;
+var myString = "variables are great";
+console.log(myNumber);   //prints variables are great
+
+example 3;
+var myBoolean = "false";
+console.log("myBoolean);  //prints false
+
+Topic 3
+Arrays
+An array also functions as a list, a stack or a queue.
+To define an array,we either use the brackets notation or the Array object notation.
+
+example 1:
+var myArray = ["You do not know JS", 42, true];
+console.log(myArray[0]);
+console.log(myArray[1]);
+console.log(myArray[2]);
+
+Addressing
+-We can use the brackets [] operator to address a specific cell in our array e.g
+var myArray = [1, 2, 3];
+console.log(myArray[1]);      // prints out 2
+
+-Arrays in JavaScript are sparse, meaning that we can also assign variables to random locations even though previous cells were undefined.
+ For example:
+ var myArray = []
+ myArray[3] = "hello"
+ console.log(myArray);   //will print [undefined, undefined, undefined, "hello"]
+
+TOPIC 5
+Manupulating Arrays
+a)Popping and Pushing
+ Push inserts variables.
+
+ example 1:
+var myStack = [];
+myStack.push(1);
+myStack.push(2);
+myStack.push(3);
+console.log(myStack);  //prints 1,2,3
+
+After pushing varaiables to an array we can pop removes variables off from the end e.g
+var myList = [];
+
+myList.push("a");
+
+myList.push("b");
+
+myList.push("c");
+
+console.log(myList.pop());
+
+console.log(myList);
+       //prints a,b
+
+Queues using Shifting and Unshifting
+The shift keyword will remove the variables of the array in the exact order they were inserted e.g
+var myQueue = [];
+myQueue.push(1);
+myQueue.push(2);
+myQueue.push(3);
+
+console.log(myQueue.shift());
+console.log(myQueue.shift());
+console.log(myQueue.shift());    //will print out 1,2,3,
+
+The unshift method is used to insert a variable at the beginning of an array e.g
+var myArray = [1,2,3];
+myArray.unshift(8);
+console.log(myArray);       // will print out 8,1,2,3
+
+Splicing
+-Splicing removes a certain part from an array to create a new array e.g
+example 1:
+var myNumber = [0,1,2,3,4,5,6,7,8,9];
+var splice = myNumber.splice(3,7);
+
+console.log(splice);        // will print out 3,4,5,6,7
+console.log(myNumber);       // will print out 0,1,2,8,9
+
+Topic 5
+Operators
+-Assignment operator (=) assigns a value to a variable e.g var x=10;
+-The addition operator used for both addition and concatenation of strings.
+ example 1:
+     var x = 5;
+     var z = 6;
+     var a = x + z; 
+example 2:
+var name = "ann";
+console.log("Hello " + name + "!");
+console.log("Goodmorning " + 100);      //prints Hello ann!
+
+                                                 Goodmorning 100
+                             
+-The multiplication operator (*) multiplies numbers e.g var x = 5;
+                                            var y = 2;
+                                            var z = x * y;  
+
+-Advanced mathematical operators include %,/=,*=,-=,+=,%=
+
+
+TOPIC 6
+Conditions
+a)The if and else statement
+ if specifies if a block of code is true or false.
+example 1:
+var myNumber = 42;
+if (myNumber == 42)
+{
+    console.log("The number is correct.");  
+}     //will print The number is correct.
+
+example 2:
+var foo = 1;
+var bar = 2;
+var moo = 3;
+
+if (foo < bar && moo > bar)
+{
+    console.log("foo is smaller than bar AND moo is larger than bar.");
+}
+
+if (foo < bar || moo > bar)
+{
+    console.log("foo is smaller than bar OR moo is larger than bar.");
+
+}                                //will print foo is smaller than bar AND moo is larger than bar.
+
+                                              foo is smaller than bar OR moo is larger than bar.
+
+
+
+-if else example:
+function checkNumber(myNumber)
+{ 
+    if (myNumber===42)
+
+    {
+        console.log("correct");
+    }
+    else
+    {
+        console.log("incorrect");
+    }
+}
+
+checkNumber(3);
+checkNumber(7);
+checkNumber(42);        //will print incorrect
+                                     incorrect  
+                                     correct
+
+b)switch
+ Specifies many alternative block of code to be executed.
+
+example 1:
+var student = "Teacher";
+switch(student)
+{
+    case "Private":
+    case "Public":
+        console.log("Good morning.");
+        break;
+    case "Teacher":
+        console.log("Hello teacher! what can I do for you today?");
+        break;
+    case "Patron":
+        console.log("Hello Patron! I will do anything you wish.");
+        break;
+    default:
+        console.log("I don't know what your school is.");
+        break;
+}
+
+TOPIC 7
+LOOPS
+for - loops through a block of code a number of times e.g.
+      var i;
+      for (i=0; i <4 ; i=i+1)
+      {
+        console.log(i);
+      }
+
+the for statement has 3 stages:
+ *Initialization - Initializes the iterator variable i e.g i to 0.
+ *Condition - As long as the condition is met, the loop continues to execute e.g i is less than 3.
+ *Increment - A directive which increments the iterator. In our case, we increment it by 1 on every loop.(i=i+1)
+
+-The while statement is a more simple version of the for e.g
+var i = 20;
+while (i > 0)
+{
+    console.log(i + " bottles of beer on the wall");
+    i -= 1;
+}        //will print 2 bottles of beer on the wall
+
+                      1 bottles of beer on the wall
+
+-continue 
+The continue statement skips the rest of the loop and jumps back to the beginning of the loop.
+ For example, if we would want to print only odd numbers using a for statement, we can do the following: 
+
+for (var i = 0; i < 10; i++)
+{
+    if (i % 2 == 0)
+    {
+         continue;
+    }
+ 
+    console.log(i + " is an odd number.");
+}   
+
+-break
+var i = 4;
+ while (true)
+{
+    console.log(i + " bottles of beer on the wall");
+    i -= 1;
+    if (i == 0)
+    {
+        break;
+    }
+}                //will print 2 bottles of beer on the wall
+                              1 bottles of beer on the wall
+
+TOPIC 8
+Objects
+-Objects are containers for named values called properties or methods e.g
+    var personObject = {
+    firstName : "ann",
+    lastName : "georges"
+}
+personObject.age = 77;
+personObject["salary"] = 140000;
+
+Iteration
+-We must use the hasOwnProperty method to check that the member in fact belongs to the object e.g
+example 1:
+
+ var personObject = {
+    firstName : "ann",
+    lastName : "georges"
+}
+personObject.age = 77;
+personObject["salary"] = 14000;
+for (var member in personObject)
+
+{
+    if (personObject.hasOwnProperty(member))
+    {
+        console.log("the member " + member + " of personObject is " + personObject[member])
+    }
+}
+
+TOPIC 9
+Function- are code blocks that can have arguments, and function have their own scope
+
+example 1
+function greet(name)
+{
+    return "Hello " + name + "!";
+}
+
+console.log(greet("Lucian"));      // prints out Hello Lucian!
+
+example 2
+var greet = function(name)
+{
+    return "Hello " + name + "!";
+}
+
+console.log(greet("Joy"));      // prints out Hello Joy!
+
+Closure-a way to "remember" and continue to access a function's scope (its variables) even once the function has finished running. 
+
+For example: 
+var plusOne = outer(1);
+var plusTwo = outer(2);
+plusOne(3);     // 4
+plusTwo(4);     // 6
+
+TOPIC 10
+Pop-up boxes
+Types:
+confirm("Hello!");    //Confirm boxes will return "true" if ok is selected, and return "false" if cancel is selected.
+prompt("Bye!");       //Alert boxes will not return anything. 
+alert("Hello world"); //Prompt boxes will return whatever is in the text box.
+
+TOPIC 11
+Call backs- functions that are passed as arguments to other functions 
+example 1;
+var callback = function() {
+    console.log("Please call me!");
+}
+
+setTimeout(callback, 5000); 
+
+example 2;
+function useCallback(callback)
+{
+    callback(1);
+    callback(2);
+    callback(3);
+}
+
+function callback(sentence) {
+    
+    console.log(sentence);
+}
+
+useCallback(callback);
+
+-callbacks can receive arguments and be executed more than once.
+
+TOPIC 12
+Object Oriented Javascript.
+-Java Script uses classes as functions to create objects using the new key word.
+
+example 1:
+function Person(firstName, lastName) {
+   
+    this.firstName = firstName;
+    this.lastName = lastName;
+
+    this.fullName = function() {
+        return this.firstName + " " + this.lastName;
+
+    }
+}
+
+var myPerson = new Person("Anne", "Georges");
+console.log(myPerson.fullName());
+
+
+example 2:
+var Person = function(name, age){
+    this.name=name;
+    this.age=age;
+    this.describe = function(){
+        return this.name + ", " + this.age + " years old";
+    }
+}
+var shalin = new Person("shalin", 23);
+var lucian = new Person("lucian", 22);
+console.log(shalin.describe());
+console.log(lucian.describe());
+
+TOPIC 13
+Function context
+var person = {
+    firstName : "John",
+    lastName : "Smith",
+    age : 23
+};
+
+function printFullName()
+{
+    console.log(this.firstName + " " + this.lastName);
+}
+
+function printDetails()
+{
+    console.log(this.firstName + " is " + this.age + " years old");
+}
+
+// TODO: create bound copies of printFullName and printDetails.
+var boundPrintFullName;
+var boundPrintDetails;
+
+boundPrintFullName();
+boundPrintDetails();
+
+
