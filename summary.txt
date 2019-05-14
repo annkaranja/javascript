@@ -4,11 +4,10 @@ console.log("Goodbye, World!");  //prints Goodbye,World!
 
 Topic 2
 Variables and Types
--Variables are parameters/containers.
--In Javascript every variable is defined using the var keyword, 
-and can contain all types of variables.
--Number type can be both a floating point number and an integer.
--Boolean variables can only be equal to either true or false.
+-Variables are parameters/containers(place holders for values).
+-In Javascript every variable is defined using the var keyword, and can contain all types of variables.
+-Number type can be both a floating point number or an integer.
+-Boolean can only be equal to either true or false.
 -When a variable is used without first defining a value for it, it is equal to undefined
 
 example 1;
@@ -45,7 +44,7 @@ console.log(myArray[1]);      // prints out 2
  myArray[3] = "hello"
  console.log(myArray);   //will print [undefined, undefined, undefined, "hello"]
 
-TOPIC 4
+TOPIC 5
 Manupulating Arrays
 a)Popping and Pushing
  Push inserts variables.
@@ -99,25 +98,56 @@ console.log(myNumber);       // will print out 0,1,2,8,9
 Topic 5
 Operators
 -Assignment operator (=) assigns a value to a variable e.g var x=10;
--The addition operator used for both addition and concatenation of strings.
- example 1:
+-Arithmetic operators:
+  *Increment/Decrement: ++ (increment), -- (decrement), as in a++ (similar to a = a + 1).
+  *The addition operator used for both addition and concatenation of strings.
+   example 1:
      var x = 5;
      var z = 6;
      var a = x + z; 
-example 2:
-var name = "ann";
-console.log("Hello " + name + "!");
-console.log("Goodmorning " + 100);      //prints Hello ann!
+   example 2:
+      var name = "Ann";
+      console.log("Hello " + name + "!");
+      console.log("Goodmorning " + 100);      //prints Hello Ann!
 
                                                  Goodmorning 100
                              
--The multiplication operator (*) multiplies numbers e.g var x = 5;
+   *The multiplication operator (*) multiplies numbers e.g 
+                                            var x = 5;
                                             var y = 2;
                                             var z = x * y;  
 
--Advanced mathematical operators include %,/=,*=,-=,+=,%=
+-Advanced mathematical operators include modulus(%);
+   example1:
+   console.log(12 % 8);     // outputs 4
 
+-Compound Assignment: +=, -=, *=, and /= are compound operators that combine a math operation with assignment, as in a += 2 (same as a = a + 2).
 
+-Comparison operators:
+   a)== (Equal)
+     Checks if the value of two operands are equal or not, if yes, then the condition becomes true.
+     Example: (A == B) is not true.
+   b)!= (Not Equal)
+     Checks if the value of two operands are equal or not, if the values are not equal, then the condition becomes true.
+     Example: (A != B) is true.
+   c)>(Greater than)
+     Checks if the value of the left operand is greater than the value of the right operand, if yes, then the condition becomes true.
+     Example: (A > B) is not true.
+   d)< (Less than)
+     Checks if the value of the left operand is less than the value of the right operand, if yes, then the condition becomes true.
+     Example: (A < B) is true.
+   e)>= (Greater than or Equal to)
+     Checks if the value of the left operand is greater than or equal to the value of the right operand, if yes, then the condition becomes true.
+     Example: (A >= B) is not true.
+   d)<= (Less than or Equal to)
+     Checks if the value of the left operand is less than or equal to the value of the right operand, if yes, then the condition becomes true.
+     Example: (A <= B) is true.
+
+-Logical: && (AND), || (OR), ! (NOT) as in a || b that selects either a or b.
+-Conditional (ternary): 
+ example:
+ condition ? val1 : val2 as in js_marks >= 80 ? 'pass' : 'fail';
+  
 TOPIC 6
 Conditions
 a)The if and else statement
@@ -147,9 +177,17 @@ if (foo < bar || moo > bar)
 
                                               foo is smaller than bar OR moo is larger than bar.
 
+-To express decisions in JS, we use the if statement. That is, "if this condition is true, then do the following else do the rest". For example, 
+var mpesa_balance = 500; 
+var price = 150;
 
+if (mpesa_balance >= price) {
+    console.log("You can purchase the fruit!");
+} else { 
+    console.log("Sorry, you are unable to purchase. Mpesa balance is below price.");
+}
 
--if else example:
+-if else example1:
 function checkNumber(myNumber)
 { 
     if (myNumber===42)
@@ -193,6 +231,11 @@ switch(student)
 
 TOPIC 7
 LOOPS
+-Looping is repeating a set of actions until a certain condition fails. 
+-A loop includes the test condition as well as a block ({}). 
+-Each time the loop block executes, that's called an iteration. 
+-In JS, loops include: for loop, while loop and do..while loop.
+
 for - loops through a block of code a number of times e.g.
       var i;
       for (i=0; i <4 ; i=i+1)
@@ -205,16 +248,21 @@ the for statement has 3 stages:
  *Condition - As long as the condition is met, the loop continues to execute e.g i is less than 3.
  *Increment - A directive which increments the iterator. In our case, we increment it by 1 on every loop.(i=i+1)
 
--The while statement is a more simple version of the for e.g
-var i = 20;
-while (i > 0)
-{
-    console.log(i + " bottles of beer on the wall");
-    i -= 1;
-}        //will print 2 bottles of beer on the wall
+-The do..while statement is a more simple version of the for e.g
+var i = 4
+while (i > 0) {
+    console.log(i);
+    i--;
+}
 
-                      1 bottles of beer on the wall
-
+do {
+    console.log(i);
+    i--;
+} while(i > 0);        //will print out 3
+                                        2
+                                        1          
+                                        0
+                                             
 -continue 
 The continue statement skips the rest of the loop and jumps back to the beginning of the loop.
  For example, if we would want to print only odd numbers using a for statement, we can do the following: 
@@ -272,7 +320,7 @@ for (var member in personObject)
 }
 
 TOPIC 9
-Function- are code blocks that can have arguments, and function have their own scope
+Functions - set procedure that performs a desired action.
 
 example 1
 function greet(name)
@@ -292,11 +340,28 @@ console.log(greet("Joy"));      // prints out Hello Joy!
 
 Closure-a way to "remember" and continue to access a function's scope (its variables) even once the function has finished running. 
 
-For example: 
+function outer(x) {
+	// parameter `x` is a variable within outer function
+
+	// inner function `inner()` uses `x`, so
+	// it has a "closure" over it
+
+	function inner(y) {
+		return y + x;
+	};
+
+	return inner;
+}
+
+For example:
 var plusOne = outer(1);
 var plusTwo = outer(2);
 plusOne(3);     // 4
 plusTwo(4);     // 6
+
+-When we call outer(1), we get back a reference to inner(..) that remembers x as 1. We call this function reference plusOne(..).
+When we call plusOne(3), it adds 3 (its inner y) to the 1 (remembered by x), and we get 4 as the result. 
+
 
 TOPIC 10
 Pop-up boxes
@@ -313,6 +378,7 @@ var callback = function() {
 }
 
 setTimeout(callback, 5000); 
+
 
 example 2;
 function useCallback(callback)
@@ -347,7 +413,7 @@ function Person(firstName, lastName) {
     }
 }
 
-var myPerson = new Person("Anne", "Georges");
+var Person = myPerson("Anne", "Georges");
 console.log(myPerson.fullName());
 
 
@@ -366,6 +432,48 @@ console.log(lucian.describe());
 
 TOPIC 13
 Function context
+-JavaScript functions are defined with the function keyword.
+-You can use a function declaration or a function expression.
+
+Function expression
+-A function expression can be stored in a variable e.g
+var x = function (a, b) {return a * b};
+-After a function expression has been stored in a variable, the variable can be used as a function e.g
+var x = function (a, b) {return a * b};
+var z = x(4, 3);
+
+Function constructor
+-Functions can also be defined with a built-in JavaScript function constructor called Function()
+
+
+
+Function Hoisting
+-Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope.
+-Hoisting applies to variable declarations and to function declarations.
+-Because of this, JavaScript functions can be called before they are declared.
+
+
+Function self-invoking
+-A self-invoking expression is invoked (started) automatically, without being called.
+-Function expressions will execute automatically if the expression is followed by ().
+-You cannot self-invoke a function declaration.
+-You have to add parentheses around the function to indicate that it is a function expression.
+
+
+
+Functions Can Be Used as Values
+
+
+Functions as objects
+
+
+Arrow functions
+-Arrow functions do not have their own this.(They are not well suited for defining object methods).
+-Arrow functions are not hoisted.(They must be defined before they are used).
+-Using const is safer than using var, because a function expression is always constant value.
+-You can only omit the return keyword and the curly brackets if the function is a single statement. 
+Because of this, it might be a good habit to always keep them:
+
 var person = {
     firstName : "John",
     lastName : "Smith",
