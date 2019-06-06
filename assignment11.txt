@@ -1,0 +1,100 @@
+***Async functions***
+-Can be placed before a function.
+ i.e
+async function f() {
+  return 1;
+}
+-The word “async” before a function means one simple thing: a function always returns a promise. Even If a function actually returns a non-promise value, 
+ prepending the function definition with the “async” keyword directs JavaScript to automatically wrap that value in a resolved promise.
+ i.e
+async function f() {
+  return 1;
+}
+
+f().then(alert); // 1
+
+-We could explicitly return a promise, that would be the same as:
+ i.e
+async function f() {
+  return Promise.resolve(1);
+}
+
+f().then(alert); // 1
+
+
+****await****
+-The keyword await makes JavaScript wait until that promise settles and returns its result.
+i.e.
+async function f() {
+
+  let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("done!"), 1000)
+  });
+
+  let result = await promise; // wait till the promise resolves (*)
+
+  alert(result); // "done!"
+}
+
+f();
+
+- await literally makes JavaScript wait until the promise settles, and then go on with the result. That doesn’t cost any CPU resources, 
+  because the engine can do other jobs meanwhile: execute other scripts, handle events
+
+
+*********************************************************************************************************
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Greens Kiosk</title>
+</head>
+<body>
+  <h1 id="title">Welcome to Greens Kiosk</h1>
+  <p>We sell fruits and vegetables</p>
+  <h3>Fruits</h3>
+  <ul id="fruList">
+    <li>Mangoes</li>
+    <li>Bananas</li>
+    <li>Water Melons</li>
+  </ul>
+  <h3>Vegetables</h3>
+  <ul id="vegList">
+    <li>Onions</li>
+    <li>Tomatoes</li>
+    <li>Kales</li>
+  </ul>
+</body>
+</html>
+
+
+Questions: 
+1.Change document background color to silver 
+2.Change the font color for h1 title tag to green
+3.Change the font case for h3 title tags to uppercase
+4.Add one more fruit to the fruits list
+5.Add one more vegetable to the vegetables list
+
+Solution
+
+var body = document.body
+  body.style.backgroundColor ="silver"
+
+  
+var title = document.getElementById("title")
+  title.style.color = "green"
+
+  
+var tokyo =document.getElementById("tokyo");
+  tokyo.innerHTML=tokyo.innerHTML.toUpperCase()  
+
+
+var fruits = document.createElement("fruList")
+  fruits.innerHTML = "passion"
+  var ul  = document.getElementById("fruList")
+  ul.appendChild(fruits)
+
+  
+var veges = document.createElement("vegList")
+  veges.innerHTML = "Edible Plant stem"
+  var ul  = document.getElementById("vegList")
+  ul.appendChild(veges)
