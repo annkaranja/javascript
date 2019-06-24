@@ -21,7 +21,6 @@ Users of the system should be able to:
 15. createOrder - params: productId, quantity, farmId, storeId
 
 
-
 class Mkulima {
   
   constructor() {
@@ -67,52 +66,52 @@ class Mkulima {
   }
  
  addVendor(vendorId,name,phone){
-  let Vendor = {
+  let farm = {
    vendorId:vendorId,
    name:name, 
    phone:phone
   }
-  this.vendors.push(Vendor)
+  this.farms.push(farm)
   }
    
-  getVendor(vendorId){
+  getVendor(VendorId){
     for(var i=0; i < this.vendors.length; i++){
-      let vendor = this.vendors[i];
-      if(vendor.vendorId === vendorId){
-        return vendor
+      let farm = this.vendors[i];
+      if(farm.vendorId === vendorId){
+        return farm
        }
     }
   }  
   removeVendor(vendorId){
-    let Vendor = this.getVendor(vendorId)
-    let index = this.vendors.indexOf(Vendor);
-    this.vendors.splice(index,1)
+    let farm = this.getVendor(vendorId)
+    let index = this.vendors.indexOf(farm);
+    this.farms.splice(index,1)
     
 }
     updateVendor(vendorId,name,phone){
-    let Vendor = {
+    let farm = {
     vendorId:vendorId,
     name:name,
     phone:phone
   }
-  this.vendors.push(Vendor)
+  this.farms.push(farm)
   } 
 
  addProduct(productId,name,price){
-  let Product = {
+  let farm = {
    productId:productId,
    name:name, 
    price:price
   }
   
-  this.products.push(Product)
+  this.farms.push(farm)
   }
   
    getProduct(productId){
     for(var i=0; i < this.products.length; i++){
-      let product = this.products[i];
-      if(product.productId === productId){
-        return product
+      let farm = this.farms[i];
+      if(farm.productId === productId){
+        return farm
        }
      }
   }  
@@ -123,12 +122,12 @@ class Mkulima {
     this.products.splice(index,1);
   }
   updateProduct(productId,name,price){
-    let Product = {
+    let farm = {
      productId:productId,
      name:name,
      price:price
   }
-  this.products.push(Product)
+  this.farms.push(farm)
   }
 }
 
@@ -149,13 +148,13 @@ mkulima3.updateFarm(10,"Prolandscape","Ann","056747483","Nakuru");
 var mkulima2 = new Mkulima();
 mkulima2.addVendor(73892017,"potatoes",5000)
 mkulima2.addVendor(49598340,"rasperries",69000)
-console.log(mkulima2.vendors)
+console.log(mkulima2.farms)
 
 mkulima2.removeVendor(1)
- console.log(mkulima2.vendors)
+ console.log(mkulima2.farms)
 var mkulima4 = new Mkulima();
 mkulima4.updateVendor(73892017,"potatoes",5000);
- console.log(mkulima4.Vendors)
+ console.log(mkulima4.farms)
  
  
 var mkulima7 = new Mkulima();
@@ -163,16 +162,17 @@ mkulima7.addProduct(20,"apples",50000)
 mkulima7.addProduct(7,"peach",10000)
 
 mkulima7.removeProduct(1)
- console.log(mkulima7.products)
+ console.log(mkulima7.farms)
  
 var mkulima9 = new Mkulima();
 mkulima9.updateProduct(7,"peach",10000);
- console.log(mkulima9.products)
+ console.log(mkulima9.farms)
 
 
 
 
 //will print out 
+
 [[object Object] {
   address: "Nakuru",
   farmer: "Ann",
@@ -214,11 +214,19 @@ mkulima9.updateProduct(7,"peach",10000);
   phone: 5000,
   vendorId: 73892017
 }]
-undefined
+[[object Object] {
+  name: "potatoes",
+  phone: 5000,
+  vendorId: 73892017
+}]
 [[object Object] {
   name: "apples",
   price: 50000,
   productId: 20
+}, [object Object] {
+  name: "peach",
+  price: 10000,
+  productId: 7
 }]
 [[object Object] {
   name: "peach",
@@ -228,3 +236,4 @@ undefined
 
 
 
+//will print out
