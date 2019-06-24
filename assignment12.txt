@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Greens Kiosk</title>
+</head>
+<body>
+  <h1 id="title">Welcome to Greens Kiosk</h1>
+  <p>We sell fruits and vegetables</p>
+  <h3>Fruits</h3>
+  <ul id="fruList">
+    <li>Mangoes</li>
+    <li>Bananas</li>
+    <li>Water Melons</li>
+  </ul>
+  <h3>Vegetables</h3>
+  <ul id="vegList">
+    <li>Onions</li>
+    <li>Tomatoes</li>
+    <li>Kales</li>
+  </ul>
+</body>
+</html>
+
+
+1.Animate the title to toggle between green and silver font color after each second
+2.Animate fruits list to be collapsible
+3.Animate vegetables list to be collapsible
+4.Add an input field to append a fruit to the fruits list on clicking a button submit fruit
+5.Add an input field to append a vegetable to the vegetables list on pressing enter button on the keyboard.
+
+
+SOLUTION
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Greens Kiosk</title>
+</head>
+<body>
+  <h1 id="title">Welcome to Greens Kiosk</h1>
+  <p>We sell fruits and vegetables</p>
+  <h3>Fruits</h3>
+  <ul id="fruList">
+    <li>Mangoes</li>
+    <li>Bananas</li>
+    <li>Water Melons</li>
+    <input id="name" type="text" >
+    <button id="btn" onClick=fruList.append(addFruit())>FRUITS</button>
+  </ul>
+  <h3>Vegetables</h3>
+  <ul id="vegList">
+    <li>Onions</li>
+    <li>Tomatoes</li>
+    <li>Kales</li>
+    <input id="name" type="text" >
+    <button id="btn" onClick=vegList.append(addVegetable())>VEGETABLES</button>
+  </ul>
+</body>
+</html>
+
+
+1.var colorChange =()=>{
+  var title = document.getElementById("title");
+  title.style.color= title.style.color=="green"? "silver":"green"
+
+  };
+  setInterval(colorChange,1000);
+
+2.var fruits = document.getElementsByClassName("FRUITS");
+  var i;
+
+  for (i = 0; i < fru.length; i++) {
+  fruits[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var matunda = this.nextElementSibling;
+    if (matunda.style.display === "block") {
+      matunda.style.display = "none";
+    } else {
+      matunda.style.display = "block";
+    }
+  });
+}
+
+ 3. var vegetables = document.getElementsByClassName("VEGETABLES");
+    var i;
+
+  for (i = 0; i < veg.length; i++) {
+  vegetables[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var mboga = this.nextElementSibling;
+    if (mboga.style.display === "block") {
+      mboga.style.display = "none";
+    } else {
+      mboga.style.display = "block";
+    }
+  });
+}
+
+4.var input = document.getElementById("myfruits");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myfruits").click();
+  }
+});
+
+5.var input = document.getElementById("myvegetables");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myfruits").click();
+  }
+});
