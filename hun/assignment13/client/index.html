@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+   <title>Greens Kiosk</title>
+</head>
+
+<body>
+   <h1 id="title">Welcome to Greens Kiosk</h1>
+   <p>We sell fruits and vegetables</p>
+   <h2>Products</h2>
+   <ul id="products">
+    <script type="text/javascript">
+        fetch('http://localhost:5000/products')
+        .then(response => response.json())
+        .then(response => {
+            response.forEach(item => {
+                var annsproduct = document.getElementById('products')
+                var annsproduct1 = document.createElement('li');
+                var annsproduct2 = document.createTextNode(item.name);
+                annsproduct1.appendChild(annsproduct2);
+                annsproduct.appendChild(annsproduct1);
+            })
+            console.log(response)
+        })
+     
+        
+        </script><!-- Show products list from API -->
+   </ul>
+   <h3>Fruits</h3>
+   <ul id="fruList">
+    <script type="text/javascript">
+        fetch('http://localhost:5000/products/fruits')
+         .then(response => response.json())
+        .then(response => {
+            response.forEach(item => {
+                var annsfruit = document.getElementById('fruList')
+                var annsfruit1 = document.createElement('li');
+                var annsfruit2 = document.createTextNode(item.name);
+                annsfruit1.appendChild(annsfruit2);
+                annsfruit.appendChild(annsfruit1);
+            })
+            console.log(response)
+        })
+     
+        
+        </script><!-- Show fruits from API -->
+   </ul>
+   <h3>Vegetables</h3>
+   <ul id="vegList">
+    <script type="text/javascript">
+        fetch('http://localhost:5000/products/vegetables')
+         .then(response => response.json())
+        .then(response => {
+            response.forEach(item => {
+                var annsvegetable = document.getElementById('vegList')
+                var annsvegetable1 = document.createElement('li');
+                var annsvegetable2 = document.createTextNode(item.name);
+                annsvegetable1.appendChild(annsvegetable2);
+                annsvegetable.appendChild(annsvegetable1);
+            })
+            console.log(response)
+        })
+     
+        
+        
+        </script><!-- Show vegetables from API -->
+   </ul>
+</body>
+
+</html>
